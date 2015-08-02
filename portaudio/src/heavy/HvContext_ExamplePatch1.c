@@ -370,3 +370,26 @@ int hv_ExamplePatch1_process_inline(Hv_ExamplePatch1 *c, float *const inputBuffe
   int n = hv_ExamplePatch1_process(c, bIn, bOut, n4);
   return n;
 }
+
+int hv_ExamplePatch1_process_inline_short(Hv_ExamplePatch1 *c, short *const inputBuffers, short *const outputBuffers, int n4) {
+  int numChannels = ctx_getNumInputChannels(Base(c));
+  float *bIn = (float *) hv_alloca(numChannels*n4*sizeof(float));
+  for (int i = 0; i < numChannels; ++i) {
+    for (int j = 0; j < n4; ++j) {
+      bIn[i*n4+j] = ((float) inputBuffers[i+numChannels*j]) / 32768.0f;
+    }
+  }
+
+  numChannels = ctx_getNumOutputChannels(Base(c));
+  float *bOut = (float *) hv_alloca(numChannels*n4*sizeof(float));
+
+  int n = hv_ExamplePatch1_process_inline(c, bIn, bOut, n4);
+
+  for (int i = 0; i < numChannels; ++i) {
+    for (int j = 0; j < n4; ++j) {
+      outputBuffers[i+numChannels*j] = (short) (bOut[i*n4+j] * 32768.0f);
+    }
+  }
+
+  return n;
+}

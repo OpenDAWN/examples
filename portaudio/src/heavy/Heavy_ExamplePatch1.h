@@ -172,6 +172,9 @@ HV_EXPORT int hv_ExamplePatch1_process(Hv_ExamplePatch1 *c, float **const inputB
 /** Processes one block of samples for a patch instance. The buffer format is an uninterleaved array of channels. */
 HV_EXPORT int hv_ExamplePatch1_process_inline(Hv_ExamplePatch1 *c, float *const inputBuffers, float *const outputBuffers, int n4);
 
+/** Processes one block of samples for a patch instance. The buffer format is an interleaved short array of channels. */
+HV_EXPORT int hv_ExamplePatch1_process_inline_short(Hv_ExamplePatch1 *c, short *const inputBuffers, short *const outputBuffers, int n4);
+  
 #endif // _HEAVY_EXAMPLEPATCH1_H_
 
 

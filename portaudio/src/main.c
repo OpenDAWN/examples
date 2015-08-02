@@ -9,7 +9,9 @@
 /*
  * This is an example program using Heavy, PortAudio and libsndfile to read
  * the contents of a file, process it through a heavy patch and send it to the
- * output.
+ * output. 
+ * 
+ * Expected data I/O format here are interleaved short values.
  */
 
 #include <stdio.h>
@@ -21,7 +23,7 @@
 // UserData struct to be passed to the audio callback
 typedef struct {
   Hv_ExamplePatch1 *hvContext;
-  float *fileBuffer;
+  short *fileBuffer;
   unsigned long fileNumFrames;
   unsigned long fileIndex;
 } UserData;
@@ -38,19 +40,19 @@ static int paCallback(const void *input, void *output,
     PaStreamCallbackFlags statusFlags, void *userData)
 {
   UserData *data = (UserData *) userData;
-  float *out = (float *) output;
+  short *out = (short *) output;
 
   // calculate num frames left to read
   long numFramesLeft = data->fileNumFrames - data->fileIndex;
   long numFramesToRead = (numFramesLeft < frameCount) ? numFramesLeft : frameCount;
-  
-  
-  for (int i = 0; i < numFramesToRead; ++i) {
-    out[i] = data->fileBuffer[data->fileIndex+i];
-  }
-  
-  hv_ExamplePatch1_process_inline(data->hvContext, out, out, (int) frameCount);
 
+  // process buffers through heavy patch
+  // expected data format here is interleaved short buffers
+  // i.e: L R L R L R ...
+  numFramesToRead = hv_ExamplePatch1_process_inline_short(data->hvContext,
+      data->fileBuffer+data->fileIndex, out, (int) numFramesToRead);
+
+  // increment read index
   data->fileIndex += numFramesToRead;
   
   return (data->fileIndex >= data->fileNumFrames) ? paComplete : paContinue;
@@ -78,8 +80,8 @@ int main(int argc, const char * argv[]) {
   
   // Load file contents into buffer
   data.fileNumFrames = info.frames;
-  data.fileBuffer = (float *) malloc(data.fileNumFrames * info.channels * sizeof(float));
-  sf_count_t framesRead = sf_read_float(file, data.fileBuffer, info.frames);
+  data.fileBuffer = (short *) malloc(data.fileNumFrames * info.channels * sizeof(short));
+  sf_count_t framesRead = sf_read_short(file, data.fileBuffer, info.frames);
   if (framesRead != info.frames) {
     printf("Incorrect number of frames read (%lld) from file\n", framesRead);
   }
@@ -100,7 +102,7 @@ int main(int argc, const char * argv[]) {
   PaStream *stream = NULL;
   if (check_pa_error(2,
       Pa_OpenDefaultStream(&stream, 0, hv_getNumOutputChannels(data.hvContext),
-          paFloat32, sampleRate, blockSize, paCallback, &data))) {
+          paInt16, sampleRate, blockSize, paCallback, &data))) {
     return 1;
   }
 
