@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="qxNVpj" name="HeavyPlugin" projectType="audioplug" version="1.0.0"
+              bundleIdentifier="com.enza.HeavyPlugin" includeBinaryInAppConfig="1"
+              buildVST="1" buildVST3="0" buildAU="0" buildRTAS="0" buildAAX="0"
+              pluginName="HeavyPlugin" pluginDesc="HeavyPlugin" pluginManufacturer="EnzienAudio"
+              pluginManufacturerCode="ENZN" pluginCode="Test" pluginChannelConfigs="{0, 2}"
+              pluginIsSynth="1" pluginWantsMidiIn="0" pluginProducesMidiOut="0"
+              pluginSilenceInIsSilenceOut="0" pluginEditorRequiresKeys="0"
+              pluginAUExportPrefix="HeavyPluginAU" pluginRTASCategory="" aaxIdentifier="com.yourcompany.HeavyPlugin"
+              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="3.1.0"
+              companyName="EnzienAudio Ltd" companyWebsite="https://enzienaudio.com"
+              companyEmail="info@enzienaudio.com">
+  <MAINGROUP id="lts4Tt" name="HeavyPlugin">
+    <GROUP id="{F52EF459-E207-55D0-536D-E4EAF74DBA6C}" name="Source">
+      <FILE id="ofkQQu" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="FLmjIN" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="flymor" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="VRJGzz" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <GROUP id="{BE433977-BE19-3E87-F590-CF3D8072ABA8}" name="Heavy">
+        <FILE id="Tdqclx" name="ControlBinop.c" compile="1" resource="0" file="Source/Heavy/ControlBinop.c"/>
+        <FILE id="nUnHu3" name="ControlBinop.h" compile="0" resource="0" file="Source/Heavy/ControlBinop.h"/>
+        <FILE id="mRRGhl" name="Heavy.c" compile="1" resource="0" file="Source/Heavy/Heavy.c"/>
+        <FILE id="diZwCu" name="Heavy_juce.h" compile="0" resource="0" file="Source/Heavy/Heavy_juce.h"/>
+        <FILE id="cPEtUc" name="HeavyMath.h" compile="0" resource="0" file="Source/Heavy/HeavyMath.h"/>
+        <FILE id="f4gonb" name="HvBase.c" compile="1" resource="0" file="Source/Heavy/HvBase.c"/>
+        <FILE id="mdMCx5" name="HvBase.h" compile="0" resource="0" file="Source/Heavy/HvBase.h"/>
+        <FILE id="oR65TL" name="HvContext_juce.c" compile="1" resource="0"
+              file="Source/Heavy/HvContext_juce.c"/>
+        <FILE id="y5LNnJ" name="HvContext_juce.h" compile="0" resource="0"
+              file="Source/Heavy/HvContext_juce.h"/>
+        <FILE id="QgZGS8" name="HvMessage.c" compile="1" resource="0" file="Source/Heavy/HvMessage.c"/>
+        <FILE id="DxbhH4" name="HvMessage.h" compile="0" resource="0" file="Source/Heavy/HvMessage.h"/>
+        <FILE id="aCp3tq" name="HvTable.c" compile="1" resource="0" file="Source/Heavy/HvTable.c"/>
+        <FILE id="hb04Z7" name="HvTable.h" compile="0" resource="0" file="Source/Heavy/HvTable.h"/>
+        <FILE id="Q7TeBd" name="MessagePool.c" compile="1" resource="0" file="Source/Heavy/MessagePool.c"/>
+        <FILE id="eDTiNT" name="MessagePool.h" compile="0" resource="0" file="Source/Heavy/MessagePool.h"/>
+        <FILE id="Q8hkuZ" name="MessageQueue.c" compile="1" resource="0" file="Source/Heavy/MessageQueue.c"/>
+        <FILE id="lY5tnN" name="MessageQueue.h" compile="0" resource="0" file="Source/Heavy/MessageQueue.h"/>
+        <FILE id="Xk7vRl" name="SignalLine.c" compile="1" resource="0" file="Source/Heavy/SignalLine.c"/>
+        <FILE id="JpggCz" name="SignalLine.h" compile="0" resource="0" file="Source/Heavy/SignalLine.h"/>
+        <FILE id="wQ9eqK" name="SignalPhasor.c" compile="1" resource="0" file="Source/Heavy/SignalPhasor.c"/>
+        <FILE id="xxM8bq" name="SignalPhasor.h" compile="0" resource="0" file="Source/Heavy/SignalPhasor.h"/>
+        <FILE id="hkeSXo" name="SignalVar.c" compile="1" resource="0" file="Source/Heavy/SignalVar.c"/>
+        <FILE id="y6wuJ8" name="SignalVar.h" compile="0" resource="0" file="Source/Heavy/SignalVar.h"/>
+        <FILE id="fw9VBZ" name="Utils.h" compile="0" resource="0" file="Source/Heavy/Utils.h"/>
+        <FILE id="zfeWKZ" name="Utils_mac.c" compile="1" resource="0" file="Source/Heavy/Utils_mac.c"/>
+        <FILE id="syBdSM" name="Utils_mac.h" compile="0" resource="0" file="Source/Heavy/Utils_mac.h"/>
+        <FILE id="AcrKCx" name="Utils_unix.c" compile="1" resource="0" file="Source/Heavy/Utils_unix.c"/>
+        <FILE id="LbSqpX" name="Utils_unix.h" compile="0" resource="0" file="Source/Heavy/Utils_unix.h"/>
+        <FILE id="MZiSkg" name="Utils_windows.c" compile="1" resource="0" file="Source/Heavy/Utils_windows.c"/>
+        <FILE id="aQ9xKR" name="Utils_windows.h" compile="0" resource="0" file="Source/Heavy/Utils_windows.h"/>
+      </GROUP>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX" vstFolder="~/SDKs/vstsdk2.4" postbuildCommand="&#13;&#10;# This script takes the build product and copies it to the AU, VST, VST3, RTAS and AAX folders, depending on &#13;&#10;# which plugin types you've built&#13;&#10;&#13;&#10;original=$CONFIGURATION_BUILD_DIR/$FULL_PRODUCT_NAME&#13;&#10;&#13;&#10;# this looks inside the binary to detect which platforms are needed.. &#13;&#10;copyAU=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'AudioUnit' | wc -l&#96;&#13;&#10;copyVST=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'VSTPlugin' | wc -l&#96;&#13;&#10;copyVST3=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'GetPluginFactory' | wc -l&#96;&#13;&#10;copyRTAS=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'CProcess' | wc -l&#96;&#13;&#10;copyAAX=&#96;nm -g &quot;$CONFIGURATION_BUILD_DIR/$EXECUTABLE_PATH&quot; | grep -i 'ACFStartup' | wc -l&#96;&#13;&#10;&#13;&#10;if [ $copyAU -gt 0 ]; then&#13;&#10;  echo &quot;Copying to AudioUnit folder...&quot;&#13;&#10;  AU=~/Library/Audio/Plug-Ins/Components/$PRODUCT_NAME.component&#13;&#10;  if [ -d &quot;$AU&quot; ]; then &#13;&#10;    rm -r &quot;$AU&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$AU&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMwPTul/BNDLPTul/g' &quot;$AU/Contents/PkgInfo&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMw/BNDL/g' &quot;$AU/Contents/$INFOPLIST_FILE&quot;&#13;&#10;&#13;&#10;  # Fix info.plist for AUs built with Xcode 3&#13;&#10;  if [ -f &quot;$DEVELOPER_DIR/Library/Developer/CoreAudio/AudioUnits/AUPublic/AUBase/AUPlugInDispatch.cpp&quot; ]; then&#13;&#10;    echo&#13;&#10;  else&#13;&#10;    echo &quot;Removing AudioComponents entry from Info.plist because this is not a new-format AU&quot;&#13;&#10;    /usr/libexec/PlistBuddy -c &quot;Delete AudioComponents&quot; &quot;$AU/Contents/Info.plist&quot;&#13;&#10;  fi&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyVST -gt 0 ]; then&#13;&#10;  echo &quot;Copying to VST folder...&quot;&#13;&#10;  VST=~/Library/Audio/Plug-Ins/VST/$PRODUCT_NAME.vst&#13;&#10;  if [ -d &quot;$VST&quot; ]; then &#13;&#10;    rm -r &quot;$VST&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$VST&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMwPTul/BNDLPTul/g' &quot;$VST/Contents/PkgInfo&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMw/BNDL/g' &quot;$VST/Contents/$INFOPLIST_FILE&quot;&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyVST3 -gt 0 ]; then&#13;&#10;  echo &quot;Copying to VST3 folder...&quot;&#13;&#10;  VST3=~/Library/Audio/Plug-Ins/VST3/$PRODUCT_NAME.vst3&#13;&#10;  if [ -d &quot;$VST3&quot; ]; then &#13;&#10;    rm -r &quot;$VST3&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$VST3&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMwPTul/BNDLPTul/g' &quot;$VST3/Contents/PkgInfo&quot;&#13;&#10;  sed -i &quot;&quot; -e 's/TDMw/BNDL/g' &quot;$VST3/Contents/$INFOPLIST_FILE&quot;&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyRTAS -gt 0 ]; then&#13;&#10;  echo &quot;Copying to RTAS folder...&quot;&#13;&#10;  RTAS=/Library/Application\ Support/Digidesign/Plug-Ins/$PRODUCT_NAME.dpm&#13;&#10;  if [ -d &quot;$RTAS&quot; ]; then&#13;&#10;    rm -r &quot;$RTAS&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  cp -r &quot;$original&quot; &quot;$RTAS&quot;&#13;&#10;fi&#13;&#10;&#13;&#10;if [ $copyAAX -gt 0 ]; then&#13;&#10;  echo &quot;Copying to AAX folder...&quot;&#13;&#10;&#13;&#10;  if [ -d &quot;/Applications/ProTools_3PDev/Plug-Ins&quot; ]; then&#13;&#10;    AAX1=&quot;/Applications/ProTools_3PDev/Plug-Ins/$PRODUCT_NAME.aaxplugin&quot;&#13;&#10;&#13;&#10;    if [ -d &quot;$AAX1&quot; ]; then&#13;&#10;      rm -r &quot;$AAX1&quot;&#13;&#10;    fi&#13;&#10;&#13;&#10;    cp -R -H &quot;$original&quot; &quot;$AAX1&quot;&#13;&#10;  fi&#13;&#10;&#13;&#10;  if [ -d &quot;/Library/Application Support/Avid/Audio/Plug-Ins&quot; ]; then&#13;&#10;    AAX2=&quot;/Library/Application Support/Avid/Audio/Plug-Ins/$PRODUCT_NAME.aaxplugin&quot;&#13;&#10;&#13;&#10;    if [ -d &quot;$AAX2&quot; ]; then&#13;&#10;      rm -r &quot;$AAX2&quot;&#13;&#10;    fi&#13;&#10;&#13;&#10;    cp -R -H &quot;$original&quot; &quot;$AAX2&quot;&#13;&#10;  fi&#13;&#10;fi&#13;&#10;"
+               extraCompilerFlags="-msse4.2">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="1" optimisation="1" targetName="HeavyPlugin"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="0" optimisation="2" targetName="HeavyPlugin"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_events" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_video" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_opengl" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+    <VS2015 targetFolder="Builds/VisualStudio2015">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="HeavyPlugin"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="2" targetName="HeavyPlugin"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_events" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_video" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_opengl" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+      </MODULEPATHS>
+    </VS2015>
+    <LINUX_MAKE targetFolder="Builds/Linux">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" libraryPath="/usr/X11R6/lib/" isDebug="1" optimisation="1"
+                       targetName="HeavyPlugin"/>
+        <CONFIGURATION name="Release" libraryPath="/usr/X11R6/lib/" isDebug="0" optimisation="2"
+                       targetName="HeavyPlugin"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_events" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_video" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_opengl" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../../LAcoustics/L-Isa/L-Isa-Controller/Libraries/juce_modules"/>
+      </MODULEPATHS>
+    </LINUX_MAKE>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_video" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_QUICKTIME="disabled"/>
+</JUCERPROJECT>

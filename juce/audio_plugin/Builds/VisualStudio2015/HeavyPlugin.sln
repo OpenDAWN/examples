@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2015
+Project("{F151F3DD-1DD4-25FC-FE06-10E7C892EDA1}") = "HeavyPlugin", "HeavyPlugin.vcxproj", "{34696BD3-8F73-E966-0250-BAD6AFC8051D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34696BD3-8F73-E966-0250-BAD6AFC8051D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{34696BD3-8F73-E966-0250-BAD6AFC8051D}.Debug|Win32.Build.0 = Debug|Win32
+		{34696BD3-8F73-E966-0250-BAD6AFC8051D}.Release|Win32.ActiveCfg = Release|Win32
+		{34696BD3-8F73-E966-0250-BAD6AFC8051D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
