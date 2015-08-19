@@ -1,0 +1,69 @@
+{
+  "args": [
+    {
+      "default": "\"\"",
+      "name": "name",
+      "required": true,
+      "value_type": "string"
+    }
+  ],
+  "connections": [
+    {
+      "from": {
+        "id": "receive_6zTFi",
+        "outlet": 0
+      },
+      "to": {
+        "id": "outlet_TofwV",
+        "inlet": 0
+      },
+      "type": "-->"
+    }
+  ],
+  "imports": [],
+  "objects": {
+    "comment_8iwjS": {
+      "annotations": {},
+      "args": {
+        "mime": "text/plain",
+        "text": "@hv_arg $1 name string \"\" true"
+      },
+      "properties": {
+        "x": "21",
+        "y": "78"
+      },
+      "type": "comment"
+    },
+    "outlet_TofwV": {
+      "annotations": {},
+      "args": {
+        "index": 0,
+        "name": "-->",
+        "type": "-->"
+      },
+      "properties": {
+        "x": 22,
+        "y": 53
+      },
+      "type": "outlet"
+    },
+    "receive_6zTFi": {
+      "annotations": {
+        "scope": "public"
+      },
+      "args": {
+        "name": "$name"
+      },
+      "properties": {
+        "x": 22,
+        "y": 25
+      },
+      "type": "receive"
+    }
+  },
+  "properties": {
+    "x": 0,
+    "y": 0
+  },
+  "type": "graph"
+}
